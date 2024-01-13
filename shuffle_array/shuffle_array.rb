@@ -5,4 +5,10 @@ class Solution
   end
 
   attr_accessor :original, :shuffled
+
+  def reset
+    shuffled = original.dup
+  end
+
+
 end
