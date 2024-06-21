@@ -3,9 +3,16 @@ require 'pry'
 
 class Test
   def two_sum(nums, target)
-    nums.each_with_index do |num, index|
+    seen = {}
+    
+    nums.each_with_index do |num, i|
+      complement = target - num
+      return [seen[complement], i] if seen.key?(complement)
+  
+      seen[num] = i
     end
   end
+  
 end
 
 describe 'test' do
