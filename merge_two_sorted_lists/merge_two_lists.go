@@ -42,3 +42,51 @@ func printList(head *ListNode) {
     }
     fmt.Println()
 }
+
+
+package main
+
+import (
+    "testing"
+)
+
+func TestMergeTwoLists(t *testing.T) {
+    // Helper function to create a linked list from a slice of integers
+    createList := func(nums []int) *ListNode {
+        dummy := &ListNode{}
+        current := dummy
+        for _, num := range nums {
+            current.Next = &ListNode{Val: num}
+            current = current.Next
+        }
+        return dummy.Next
+    }
+
+    // Test cases
+    tests := []struct {
+        l1, l2, expected []int
+    }{
+        {[]int{1, 2, 4}, []int{1, 3, 4}, []int{1, 1, 2, 3, 4, 4}},
+        {[]int{}, []int{}, []int{}},
+        {[]int{1, 2, 3}, []int{}, []int{1, 2, 3}},
+        {[]int{}, []int{0, 5}, []int{0, 5}},
+    }
+
+    for _, test := range tests {
+        l1 := createList(test.l1)
+        l2 := createList(test.l2)
+        expected := createList(test.expected)
+
+        result := mergeTwoLists(l1, l2)
+
+        // Compare result with expected
+        for result != nil || expected != nil {
+            if result == nil || expected == nil || result.Val != expected.Val {
+                t.Errorf("Test failed! Expected: %v, Got: %v", test.expected, result)
+                break
+            }
+            result = result.Next
+            expected = expected.Next
+        }
+    }
+}
