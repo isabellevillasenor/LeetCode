@@ -42,5 +42,23 @@ RSpec.describe Solution do
       expect(solution.is_valid_bst(root)).to be true
     end
 
+    it 'returns false for an invalid BST' do
+      # Creating an invalid BST:
+      #       5
+      #      / \
+      #     1   4
+      #        / \
+      #       3   6
+      root = TreeNode.new(5)
+      root.left = TreeNode.new(1)
+      root.right = TreeNode.new(4)
+      root.right.left = TreeNode.new(3)
+      root.right.right = TreeNode.new(6)
+
+      expect(solution.is_valid_bst(root)).to be false
+    end
+
+
+
   end
 end
