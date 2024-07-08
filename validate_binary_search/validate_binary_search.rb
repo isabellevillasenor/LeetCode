@@ -58,7 +58,10 @@ RSpec.describe Solution do
       expect(solution.is_valid_bst(root)).to be false
     end
 
-
+    it 'returns true for an empty tree' do
+      root = nil
+      expect(solution.is_valid_bst(root)).to be true
+    end
 
   end
 end
