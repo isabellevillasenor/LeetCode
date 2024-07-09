@@ -74,6 +74,17 @@ RSpec.describe Solution do
       expect(solution.is_valid_bst(root)).to be false
     end
 
+    it 'returns false when right child is smaller than parent' do
+      # Creating an invalid BST:
+      #       2
+      #      / \
+      #     1   0
+      root = TreeNode.new(2)
+      root.left = TreeNode.new(1)
+      root.right = TreeNode.new(0)
+
+      expect(solution.is_valid_bst(root)).to be false
+    end
 
   end
 end
