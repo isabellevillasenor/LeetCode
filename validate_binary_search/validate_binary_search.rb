@@ -85,6 +85,5 @@ RSpec.describe Solution do
 
       expect(solution.is_valid_bst(root)).to be false
     end
-
   end
 end
