@@ -21,3 +21,15 @@ defmodule TreeNode do
     %TreeNode{val: val, left: left, right: right}
   end
 end
+
+defmodule SolutionTest do
+  use ExUnit.Case
+  alias Solution
+  alias TreeNode
+
+  test "valid BST" do
+    root = %TreeNode{val: 2, left: %TreeNode{val: 1}, right: %TreeNode{val: 3}}
+    assert Solution.is_valid_bst(root) == true
+  end
+
+end
