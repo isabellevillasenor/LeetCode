@@ -14,3 +14,10 @@ defmodule Solution do
   end
 end
 
+defmodule TreeNode do
+  defstruct [:val, :left, :right]
+
+  def new(val, left \\ nil, right \\ nil) do
+    %TreeNode{val: val, left: left, right: right}
+  end
+end
