@@ -59,5 +59,4 @@ defmodule SolutionTest do
     root = %TreeNode{val: 2, left: %TreeNode{val: 1}, right: %TreeNode{val: 0}}
     assert Solution.is_valid_bst(root) == false
   end
-
 end
