@@ -50,6 +50,9 @@ defmodule SolutionTest do
     assert Solution.is_valid_bst(root) == true
   end
 
-
+  test "left child greater than parent" do
+    root = %TreeNode{val: 2, left: %TreeNode{val: 3}, right: %TreeNode{val: 4}}
+    assert Solution.is_valid_bst(root) == false
+  end
 
 end
