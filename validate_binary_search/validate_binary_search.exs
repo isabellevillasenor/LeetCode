@@ -32,7 +32,7 @@ defmodule SolutionTest do
     assert Solution.is_valid_bst(root) == true
   end
   
-    test "invalid BST" do
+  test "invalid BST" do
     root = %TreeNode{
       val: 5,
       left: %TreeNode{val: 1},
@@ -44,5 +44,12 @@ defmodule SolutionTest do
     }
     assert Solution.is_valid_bst(root) == false
   end
+
+  test "empty tree" do
+    root = nil
+    assert Solution.is_valid_bst(root) == true
+  end
+
+
 
 end
