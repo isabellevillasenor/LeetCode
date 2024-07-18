@@ -21,4 +21,8 @@ def first_bad_version(n)
 end
 
 RSpec.describe 'first_bad_version' do
+  it 'returns the first bad version' do
+    expect(first_bad_version(5)).to eq(4)
+  end
+
 end
