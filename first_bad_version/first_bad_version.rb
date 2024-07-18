@@ -33,5 +33,7 @@ RSpec.describe 'first_bad_version' do
     expect(first_bad_version(7)).to eq(4)
   end
 
+  it 'returns the first bad version when bad version is at the start' do
+    expect(first_bad_version(3)).to eq(3)
   end
 end
