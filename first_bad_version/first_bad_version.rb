@@ -25,4 +25,7 @@ RSpec.describe 'first_bad_version' do
     expect(first_bad_version(5)).to eq(4)
   end
 
+  it 'returns the first bad version when only one version is bad' do
+    expect(first_bad_version(10)).to eq(4)
+  end
 end
