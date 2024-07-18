@@ -36,4 +36,8 @@ RSpec.describe 'first_bad_version' do
   it 'returns the first bad version when bad version is at the start' do
     expect(first_bad_version(3)).to eq(3)
   end
+
+  it 'handles a large number of versions' do
+    expect(first_bad_version(1000)).to eq(4)
+  end
 end
