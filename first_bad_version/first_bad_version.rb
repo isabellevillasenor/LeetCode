@@ -19,3 +19,6 @@ def first_bad_version(n)
 
   left
 end
+
+RSpec.describe 'first_bad_version' do
+end
