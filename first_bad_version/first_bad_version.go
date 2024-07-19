@@ -20,3 +20,30 @@ func firstBadVersion(n int) int {
 
     return left
 }
+
+package main
+
+import (
+	"testing"
+)
+
+func TestFirstBadVersion(t *testing.T) {
+	// Define a helper function to mock different cases
+	tests := []struct {
+		n        int
+		expected int
+	}{
+		{5, 4},
+		{10, 4},
+		{7, 4},
+		{3, 3},  // Simulating first bad version is 3
+		{1000, 4}, // Large input test case
+	}
+
+	for _, test := range tests {
+		result := firstBadVersion(test.n)
+		if result != test.expected {
+			t.Errorf("firstBadVersion(%d) = %d; expected %d", test.n, result, test.expected)
+		}
+	}
+}
