@@ -18,3 +18,16 @@ defmodule Solution do
 
   defp binary_search(left, _right), do: left # Return first bad version
 end
+
+defmodule SolutionTest do
+  use ExUnit.Case
+  doctest Solution
+
+  test "finds the first bad version" do
+    assert Solution.first_bad_version(5) == 4
+    assert Solution.first_bad_version(10) == 4
+    assert Solution.first_bad_version(7) == 4
+    assert Solution.first_bad_version(3) == 3 # If version 3 is the first bad
+    assert Solution.first_bad_version(1000) == 4 # Large input test
+  end
+end
