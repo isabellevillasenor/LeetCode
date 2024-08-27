@@ -21,6 +21,4 @@ class MinStack
   def get_min
     @min_stack.last[1]
   end
-
-
 end
