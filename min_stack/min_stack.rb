@@ -22,3 +22,18 @@ class MinStack
     @min_stack.last[1]
   end
 end
+
+require 'rspec'
+
+RSpec.describe MinStack do
+  it 'performs push, pop, top, and get_min correctly' do
+    stack = MinStack.new
+    stack.push(-2)
+    stack.push(0)
+    stack.push(-3)
+    expect(stack.get_min).to eq(-3)  # Minimum is -3
+    stack.pop
+    expect(stack.top).to eq(0)       # Top is now 0
+    expect(stack.get_min).to eq(-2)  # Minimum is now -2
+  end
+end
