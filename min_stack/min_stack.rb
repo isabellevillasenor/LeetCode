@@ -18,6 +18,9 @@ class MinStack
     @stack.last
   end
 
+  def get_min
+    @min_stack.last[1]
+  end
 
 
 end
