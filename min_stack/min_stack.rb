@@ -13,4 +13,11 @@ class MinStack
     @stack.pop
     @min_stack.pop
   end
+
+  def top
+    @stack.last
+  end
+
+
+
 end
