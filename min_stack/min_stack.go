@@ -33,3 +33,31 @@ func (this *MinStack) Top() int {
 func (this *MinStack) GetMin() int {
 	return this.minStack[len(this.minStack)-1]
 }
+
+package main
+
+import (
+	"testing"
+)
+
+func TestMinStack(t *testing.T) {
+	stack := Constructor()
+	stack.Push(-2)
+	stack.Push(0)
+	stack.Push(-3)
+
+	if stack.GetMin() != -3 {
+		t.Errorf("Expected -3, got %d", stack.GetMin())
+	}
+
+	stack.Pop()
+
+	if stack.Top() != 0 {
+		t.Errorf("Expected 0, got %d", stack.Top())
+	}
+
+	if stack.GetMin() != -2 {
+		t.Errorf("Expected -2, got %d", stack.GetMin())
+	}
+}
+
