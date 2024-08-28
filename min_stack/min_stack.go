@@ -25,3 +25,9 @@ func (this *MinStack) Pop() {
 	}
 	this.stack = this.stack[:len(this.stack)-1]
 }
+
+func (this *MinStack) Top() int {
+	return this.stack[len(this.stack)-1]
+}
+
+
