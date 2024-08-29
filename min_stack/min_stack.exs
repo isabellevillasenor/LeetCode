@@ -24,3 +24,22 @@ defmodule MinStack do
 
   def get_min(%MinStack{min_stack: [min | _]}), do: min
 end
+
+defmodule MinStackTest do
+  use ExUnit.Case
+  alias MinStack
+
+  test "MinStack operations" do
+    stack = MinStack.new()
+    stack = MinStack.push(stack, -2)
+    stack = MinStack.push(stack, 0)
+    stack = MinStack.push(stack, -3)
+
+    assert MinStack.get_min(stack) == -3
+
+    stack = MinStack.pop(stack)
+
+    assert MinStack.top(stack) == 0
+    assert MinStack.get_min(stack) == -2
+  end
+end
