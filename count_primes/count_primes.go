@@ -30,3 +30,28 @@ func countPrimes(n int) int {
 
     return count
 }
+
+package main
+
+import "testing"
+
+func TestCountPrimes(t *testing.T) {
+    tests := []struct {
+        n        int
+        expected int
+    }{
+        {10, 4},   // Primes: 2, 3, 5, 7
+        {0, 0},
+        {1, 0},
+        {2, 0},
+        {3, 1},    // Prime: 2
+        {100, 25}, // Primes up to 100
+    }
+
+    for _, test := range tests {
+        result := countPrimes(test.n)
+        if result != test.expected {
+            t.Errorf("For n=%d, expected %d but got %d", test.n, test.expected, result)
+        }
+    }
+}
