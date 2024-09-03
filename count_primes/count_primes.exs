@@ -20,3 +20,17 @@ defmodule Solution do
     |> Enum.count(fn i -> :array.get(i, is_prime) end)
   end
 end
+
+defmodule SolutionTest do
+  use ExUnit.Case
+  alias Solution
+
+  test "count primes correctly" do
+    assert Solution.count_primes(10) == 4    # Primes: 2, 3, 5, 7
+    assert Solution.count_primes(0) == 0
+    assert Solution.count_primes(1) == 0
+    assert Solution.count_primes(2) == 0
+    assert Solution.count_primes(3) == 1     # Prime: 2
+    assert Solution.count_primes(100) == 25
+  end
+end
