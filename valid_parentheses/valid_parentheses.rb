@@ -25,13 +25,12 @@ RSpec.describe Solution do
     expect(solution.is_valid("()[]{}")).to eq(true)
     expect(solution.is_valid("{[]}")).to eq(true)
   end
-  
+
   it 'invalidates incorrect parentheses' do
     expect(solution.is_valid("(]")).to eq(false)
     expect(solution.is_valid("([)]")).to eq(false)
     expect(solution.is_valid("{")).to eq(false)
     expect(solution.is_valid("]")).to eq(false)
   end
-
 end
 
