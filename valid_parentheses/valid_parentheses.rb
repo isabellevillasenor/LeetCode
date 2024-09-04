@@ -14,3 +14,17 @@ class Solution
     stack.empty?
   end
 end
+
+require 'rspec'
+
+RSpec.describe Solution do
+  let(:solution) { Solution.new }
+
+  it 'validates correct parentheses' do
+    expect(solution.is_valid("()")).to eq(true)
+    expect(solution.is_valid("()[]{}")).to eq(true)
+    expect(solution.is_valid("{[]}")).to eq(true)
+  end
+
+end
+
