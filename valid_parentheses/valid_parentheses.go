@@ -17,3 +17,29 @@ func IsValid(s string) bool {
 
     return len(stack) == 0
 }
+
+package solution
+
+import "testing"
+
+func TestIsValid(t *testing.T) {
+    cases := []struct {
+        input    string
+        expected bool
+    }{
+        {"()", true},
+        {"()[]{}", true},
+        {"{[]}", true},
+        {"(]", false},
+        {"([)]", false},
+        {"{", false},
+        {"]", false},
+    }
+
+    for _, c := range cases {
+        result := IsValid(c.input)
+        if result != c.expected {
+            t.Errorf("IsValid(%q) == %v, expected %v", c.input, result, c.expected)
+        }
+    }
+}
