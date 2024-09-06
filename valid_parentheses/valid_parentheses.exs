@@ -23,3 +23,21 @@ defmodule Solution do
     end
   end
 end
+
+defmodule SolutionTest do
+  use ExUnit.Case
+  doctest Solution
+
+  test "valid cases" do
+    assert Solution.is_valid("()") == true
+    assert Solution.is_valid("()[]{}") == true
+    assert Solution.is_valid("{[]}") == true
+  end
+
+  test "invalid cases" do
+    assert Solution.is_valid("(]") == false
+    assert Solution.is_valid("([)]") == false
+    assert Solution.is_valid("{") == false
+    assert Solution.is_valid("]") == false
+  end
+end
