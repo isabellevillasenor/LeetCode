@@ -27,9 +27,9 @@ RSpec.describe Solution do
     expect(solution.max_depth(root)).to eq(3)
   end
 
-  # it 'returns 0 for an empty tree' do
-  #   expect(solution.max_depth(nil)).to eq(0)
-  # end
+  it 'returns 0 for an empty tree' do
+    expect(solution.max_depth(nil)).to eq(0)
+  end
 
   # it 'returns 1 for a single node' do
   #   root = TreeNode.new(1)
