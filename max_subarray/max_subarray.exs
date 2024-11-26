@@ -8,3 +8,20 @@ defmodule Solution do
     max_sum
   end
 end
+
+defmodule SolutionTest do
+  use ExUnit.Case
+  doctest Solution
+
+  test "returns the maximum subarray sum" do
+    assert Solution.max_sub_array([-2,1,-3,4,-1,2,1,-5,4]) == 6
+  end
+
+  test "returns the only element if array has one element" do
+    assert Solution.max_sub_array([1]) == 1
+  end
+
+  test "handles all negative numbers" do
+    assert Solution.max_sub_array([-1,-2,-3,-4]) == -1
+  end
+end
