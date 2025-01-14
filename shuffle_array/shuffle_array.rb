@@ -12,3 +12,16 @@ class Solution
     @shuffled.shuffle!
   end
 end
+
+require 'rspec'
+
+RSpec.describe Solution do
+  it 'shuffles and resets an array' do
+    nums = [1, 2, 3]
+    solution = Solution.new(nums)
+
+    expect(solution.shuffle).to match_array(nums)
+    expect(solution.reset).to eq(nums)
+    expect(solution.shuffle).to match_array(nums)
+  end
+end
