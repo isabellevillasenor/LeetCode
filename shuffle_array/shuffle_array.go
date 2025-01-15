@@ -27,3 +27,22 @@ func (this *Solution) Shuffle() []int {
     }
     return this.shuffled
 }
+
+package main
+
+import (
+    "reflect"
+    "testing"
+)
+
+func TestSolution(t *testing.T) {
+    nums := []int{1, 2, 3}
+    obj := Constructor(nums)
+
+    shuffled := obj.Shuffle()
+    if !reflect.DeepEqual(shuffled, nums) && reflect.DeepEqual(obj.Reset(), nums) {
+        t.Log("Shuffle and Reset work correctly")
+    } else {
+        t.Errorf("Shuffle or Reset did not work as expected")
+    }
+}
